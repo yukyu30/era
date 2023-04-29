@@ -15,13 +15,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_29_144819) do
   enable_extension "plpgsql"
 
   create_table "notes", force: :cascade do |t|
-    t.string "title"
-    t.string "slug"
+    t.string "title", null: false
+    t.string "slug", null: false
     t.string "eyecatch"
-    t.text "content"
+    t.text "content", null: false
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_notes_on_slug", unique: true
   end
 
 end
