@@ -12,7 +12,8 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create note" do
     assert_difference("Note.count") do
-      post notes_url, params: { note: { content: @note.content, eyecatch: @note.eyecatch, published_at: @note.published_at, slug: @note.slug, title: @note.title } }, as: :json
+      post notes_url, 
+params: { note: { content: @note.content, eyecatch: @note.eyecatch, published_at: @note.published_at, slug: @note.slug, title: @note.title } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +25,8 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update note" do
-    patch note_url(@note), params: { note: { content: @note.content, eyecatch: @note.eyecatch, published_at: @note.published_at, slug: @note.slug, title: @note.title } }, as: :json
+    patch note_url(@note), 
+params: { note: { content: @note.content, eyecatch: @note.eyecatch, published_at: @note.published_at, slug: @note.slug, title: @note.title } }, as: :json
     assert_response :success
   end
 
