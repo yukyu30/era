@@ -16,5 +16,5 @@ test:
 
 production:
   <<: *default
-  database: era_production
+  database: era_db
   url: <%= ENV['DATABASE_URL'] %>
