@@ -1,0 +1,41 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+
+AllCops:
+  # Ruby, Railsバージョン指定
+  TargetRubyVersion: 2.6
+  TargetRailsVersion: 7.0
+  # 除外
+  Exclude:
+    - "config.ru"
+    - "bin/**"
+    - "lib/**"
+    - "db/**/*"
+    - "config/**/*"
+    - "script/**/*"
+    - !ruby/regexp /old_and_unused\.rb$/
+
+# Rails用の設定を有効化
+Rails:
+  Enabled: true
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# クラスのコメント必須を無視
+Documentation:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# 文字リテラルのイミュータブル宣言を無視
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
