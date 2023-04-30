@@ -4,9 +4,13 @@ services:
     name: Rails
     env: ruby
     region: singapore
-    plang: free
+    plan: free
     branch: main
     rootDir: backend
     buildCommand: ./bin/render-build.sh
     startCommand: bundle exec puma -C config/puma.rb
-
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: RAILS_MASTER_KEY
+        sync: false
