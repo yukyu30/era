@@ -31,8 +31,4 @@ services:
       - src/**/*.js
       ignoredPaths:
       - src/**/*.test.js
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: sameorigin
 
