@@ -16,18 +16,3 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
-    # Frontend
-  - type: web
-    name: era
-    env: static
-    region: singapore
-    plan: free
-    branch: main
-    rootDir: frontend
-    buildCommand: npm ci && npm run build
-    staticPublishPath: ./build
-    pullRequestPreviewsEnabled: true
-
-databases:
-  - name: era_db
-    region: singapore
