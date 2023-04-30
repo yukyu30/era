@@ -9,6 +9,7 @@ services:
     rootDir: backend
     buildCommand: ./bin/render-build.sh
     startCommand: bundle exec puma -C config/puma.rb
+    healthCheckPath: /healthz
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -26,3 +27,5 @@ services:
     buildCommand: npm ci && npm run build
     staticPublishPath: ./build
     pullRequestPreviewsEnabled: true
+
+
