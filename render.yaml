@@ -1,0 +1,12 @@
+services:
+  # A Rails web service
+  - type: web
+    name: Rails
+    env: ruby
+    region: singapore
+    plang: free
+    branch: main
+    rootDir: backend
+    buildCommand: ./bin/render-build.sh
+    startCommand: bundle exec puma -C config/puma.rb
+
