@@ -26,3 +26,16 @@ services:
     buildCommand: npm ci && npm run build
     staticPublishPath: ./build
     pullRequestPreviewsEnabled: true
+    buildFilter:
+      paths:
+      - src/**/*.js
+      ignoredPaths:
+      - src/**/*.test.js
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: sameorigin
+
+databases:
+  - name: era_db
+    region: singapore
