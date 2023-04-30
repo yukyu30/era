@@ -1,7 +1,7 @@
 services:
-  # A Rails web service
+  # Rails API
   - type: web
-    name: Rails
+    name: era-api
     env: ruby
     region: singapore
     plan: free
@@ -14,3 +14,24 @@ services:
         sync: false
       - key: RAILS_MASTER_KEY
         sync: false
+    # Frontend
+    - type: web
+      name: era
+      env: static
+      region: singapore
+      plan: free
+      branch: main
+      rootDir: frontend
+      buildCommand: npm ci && npm run build
+      staticPublishPath: ./build
+      pullRequestPreviewsEnabled: true
+      envVars:
+        - key: DATABASE_URL
+          fromDatabase:
+            name: era_db
+            property: connectionString
+        - key: RAILS_MASTER_KEY
+          sync: false
+databases:
+  - name: era_db
+    region: frankfurt
