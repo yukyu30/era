@@ -39,3 +39,4 @@ services:
 databases:
   - name: era_db
     region: singapore
+    plan: free
