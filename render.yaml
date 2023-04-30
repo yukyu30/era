@@ -20,7 +20,6 @@ services:
   - type: web
     name: era
     env: static
-    region: singapore
     plan: free
     branch: main
     rootDir: frontend
