@@ -11,10 +11,14 @@ services:
     startCommand: bundle exec puma -C config/puma.rb
     healthCheckPath: /healthz
     envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: era_db
-          property: connectionString
+      - key: DATABASE_USER
+        ync: false
+      - key: DATABASE_PASSWORD
+        sync: false
+      - key: DATABASE_HOST
+        sync: false
+      - key: DATABASE_PORT
+        sync: false
       - key: RAILS_MASTER_KEY
         sync: false
   # Frontend
@@ -30,8 +34,3 @@ services:
       - path: /*
         name: X-Frame-Options
         value: sameorigin
-
-databases:
-  - name: era_db
-    region: singapore
-    plan: free
