@@ -11,13 +11,7 @@ services:
     startCommand: bundle exec puma -C config/puma.rb
     healthCheckPath: /healthz
     envVars:
-      - key: DATABASE_USER
-        sync: false
-      - key: DATABASE_PASSWORD
-        sync: false
-      - key: DATABASE_HOST
-        sync: false
-      - key: DATABASE_PORT
+      - key: DATABASE_URL
         sync: false
       - key: RAILS_MASTER_KEY
         sync: false

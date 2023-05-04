@@ -17,7 +17,4 @@ test:
 production:
   <<: *default
   database: era_db
-  username: <%= ENV['DATABASE_USER'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
-  port: <%= ENV['DATABASE_PORT'] %>
+  url: <%= ENV['DATABASE_url'] %>
